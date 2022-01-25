@@ -5,7 +5,7 @@ import { View,  StyleSheet } from 'react-native'
 import { HeaderBanner, HeaderTitle, HeaderButton, colors } from '../styles/appStyles'
 
 //ICON
-import { Entypo } from '@expo/vector-icons'
+import { MaterialCommunityIcons } from '@expo/vector-icons'
 
 const stylesHeader = StyleSheet.create({
     containerHeader : {
@@ -19,7 +19,7 @@ const stylesHeader = StyleSheet.create({
         justifyContent: 'space-between',
         width: '88%',
         position: 'absolute',
-        bottom: 28
+        bottom: 36
     }
 })
 
@@ -30,7 +30,7 @@ const Header = () => {
             <View style={stylesHeader.containerText}>
                 <HeaderTitle>Quoi de neuf, Theo ?</HeaderTitle>
                 <HeaderButton>
-                    <Entypo name='trash' size={20} color={colors.tertiary} />
+                    <MaterialCommunityIcons name='delete-empty' size={24} color={colors.tertiary} />
                 </HeaderButton>
             </View>
         </View>

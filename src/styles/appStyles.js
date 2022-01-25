@@ -20,7 +20,6 @@ export const colors = {
 
 export const Container = styled.SafeAreaView`
   background-color: ${colors.primary};
-  padding-bottom: 0px;
   flex: 1;
 `;
 
@@ -42,48 +41,42 @@ export const HeaderButton = styled.TouchableOpacity`
 `
 
 // List
-export const ListContainer = styled.View`
-  margin-bottom: 30px;
-  flex: 1;
-  padding-bottom: 40px;
-`;
-
 export const ListView = styled.TouchableHighlight`
-  background-color: ${colors.secondary};
-  min-height: 85px;
+  background-color: ${colors.primary};
+  min-height: 64px;
   width: 100%;
-  padding: 15px;
+  padding: 16px;
   justify-content: space-around;
-  margin-bottom: 15px;
-  border-radius: 10px;
+  margin-left: 8px;
+  margin-right: 16px
 `;
 
 export const ListViewHidden = styled.View`
-  background-color: ${colors.tertiary};
-  min-height: 85px;
+  background-color: ${colors.primary};
+  min-height: 64px;
   width: 100%;
-  padding: 15px;
+  padding: 16px;
   justify-content: center;
   align-items: flex-start;
-  margin-bottom: 15px;
-  border-radius: 11px;
+  margin-left: 8px;
+  margin-right: 16px
 `;
 
 export const HiddenButton = styled.TouchableOpacity`
-  width: 55px;
+  width: 64px;
   align-items: center;
 `;
 
 export const TodoText = styled.Text`
   font-size: 16px;
-  letter-spacing: 1px;
   color: ${colors.tertiary};
 `;
 
 export const TodoDate = styled.Text`
   font-size: 10px;
   color: ${colors.alternative};
-  text-align: right;
+  margin-top: 2px;
+  text-align: left;
   text-transform: uppercase;
 `;
 
