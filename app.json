@@ -1,6 +1,7 @@
 {
   "expo": {
-    "name": "todo-app-reat-native",
+    "name": "ToDo App",
+    "description": "Une application type ToDo liste développée en React Native.",
     "slug": "todo-app-reat-native",
     "version": "1.0.0",
     "orientation": "portrait",
