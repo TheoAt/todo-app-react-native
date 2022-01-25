@@ -23,13 +23,13 @@ const stylesHeader = StyleSheet.create({
     }
 })
 
-const Header = () => {
+const Header = ({ clearTasks }) => {
     return(
         <View style={stylesHeader.containerHeader}>
             <HeaderBanner source={require('../assets/header_banner.gif')} alt='header_banner' />
             <View style={stylesHeader.containerText}>
                 <HeaderTitle>Quoi de neuf, Theo ?</HeaderTitle>
-                <HeaderButton>
+                <HeaderButton onPress={() => clearTasks()}>
                     <MaterialCommunityIcons name='delete-empty' size={24} color={colors.tertiary} />
                 </HeaderButton>
             </View>

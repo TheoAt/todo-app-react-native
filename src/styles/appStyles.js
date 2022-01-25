@@ -46,9 +46,7 @@ export const ListView = styled.TouchableHighlight`
   min-height: 64px;
   width: 100%;
   padding: 16px;
-  justify-content: space-around;
-  margin-left: 8px;
-  margin-right: 16px
+  justify-content: space-around
 `;
 
 export const ListViewHidden = styled.View`
@@ -57,25 +55,26 @@ export const ListViewHidden = styled.View`
   width: 100%;
   padding: 16px;
   justify-content: center;
-  align-items: flex-start;
-  margin-left: 8px;
-  margin-right: 16px
+  align-items: flex-start
 `;
 
 export const HiddenButton = styled.TouchableOpacity`
   width: 64px;
   align-items: center;
+  margin-left: 6px
 `;
 
 export const TodoText = styled.Text`
   font-size: 16px;
   color: ${colors.tertiary};
+  margin-left: 8px;
 `;
 
 export const TodoDate = styled.Text`
   font-size: 10px;
   color: ${colors.alternative};
   margin-top: 2px;
+  margin-left: 8px;
   text-align: left;
   text-transform: uppercase;
 `;

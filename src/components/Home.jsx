@@ -17,12 +17,17 @@ const Home = () => {
         }
     ]
 
-    const [data, setData] = useState(initialTasks)
+    const [tasks, setTasks] = useState(initialTasks)
+
+    //CLEAR ALL TASKS
+    const handleClearTasks = () => {
+        setTasks([])
+    }
 
     return(
         <>
-            <Header />
-            <ListTasks tasks={data} setTasks={setData} />
+            <Header clearTasks={handleClearTasks} />
+            <ListTasks tasks={tasks} setTasks={setTasks} />
         </>
     )
 }
