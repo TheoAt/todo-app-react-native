@@ -1,9 +1,9 @@
 import React from 'react'
-import { Text } from 'react-native'
+import Header from './Header'
 
 const Home = () => {
     return(
-        <Text>Hello !</Text>
+        <Header />
     )
 }
 

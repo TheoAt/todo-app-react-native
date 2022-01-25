@@ -2,6 +2,7 @@ import styled from "styled-components";
 import {
   Text,
   View,
+  Image,
   TouchableOpacity,
   TouchableHighlight,
   SafeAreaView,
@@ -17,36 +18,28 @@ export const colors = {
   alternative: "#999999",
 };
 
-const statusBarHeight = Constants.statusBarHeight;
-
 export const Container = styled.SafeAreaView`
   background-color: ${colors.primary};
-  padding: 20px;
   padding-bottom: 0px;
   flex: 1;
-  padding-top: ${statusBarHeight}px;
 `;
 
-// Header
-export const HeaderView = styled.View`
-  padding-vertical: 10px;
-  margin-bottom: 10px;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-`;
+//Header Banner
+export const HeaderBanner = styled.Image`
+  width: 100%;
+  height: 280px;
+`
 
 export const HeaderTitle = styled.Text`
-  font-size: 35px;
+  font-size: 20px;
   font-weight: bold;
   color: ${colors.tertiary};
-  letter-spacing: 2px;
-  font-style: italic;
 `;
+
 export const HeaderButton = styled.TouchableOpacity`
   font-weight: bold;
-  color: ${colors.tertiary};
-`;
+  color: ${colors.tertiary}
+`
 
 // List
 export const ListContainer = styled.View`
@@ -89,7 +82,6 @@ export const TodoText = styled.Text`
 
 export const TodoDate = styled.Text`
   font-size: 10px;
-  letter-spacing: 1px;
   color: ${colors.alternative};
   text-align: right;
   text-transform: uppercase;
