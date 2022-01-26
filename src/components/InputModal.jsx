@@ -3,18 +3,27 @@ import { Modal } from 'react-native'
 import { ModalButton, ModalContainer, ModalView, StyledInput, ModalAction, ModalIcon, HeaderTitle, colors } from '../styles/appStyles'
 import { AntDesign } from '@expo/vector-icons'
 
-const InputModal = ({ tasks, getDate, modalOn, setModalOn, taskInputValue, setTaskInputValue, handleAddTask }) => {
+const InputModal = ({ tasks, getDate, modalOn, setModalOn, taskInputValue, setTaskInputValue, handleAddTask, taskToBeEdited, setTaskToBeEdited, handleEditTask }) => {
     const handleCloseModal = () => {
         setModalOn(false)
         setTaskInputValue("")
+        setTaskToBeEdited(null)
     }
 
     const handleSubmit = () => {
-        handleAddTask({
-            title: taskInputValue,
-            date: getDate(),
-            key: `${(tasks[tasks.length - 1] && parseInt(tasks[tasks.length - 1].key) + 1) || 1 }`
-        })
+        if(!taskToBeEdited) {
+            handleAddTask({
+                title: taskInputValue,
+                date: getDate(),
+                key: `${(tasks[tasks.length - 1] && parseInt(tasks[tasks.length - 1].key) + 1) || 1 }`
+            })
+        } else {
+            handleEditTask({
+                title: taskInputValue,
+                date: taskToBeEdited.date,
+                key: taskToBeEdited.key
+            })
+        }
         setTaskInputValue("")
     }
 
@@ -33,8 +42,7 @@ const InputModal = ({ tasks, getDate, modalOn, setModalOn, taskInputValue, setTa
                 <ModalContainer>
                     <ModalView>
                         <ModalIcon>
-                            <HeaderTitle style={{ marginTop: 8 }}>Nouvelle tâche</HeaderTitle>
-                            {/* <AntDesign name='edit' size={30} color={colors.tertiary} /> */}
+                            <HeaderTitle style={{ marginTop: 8 }}>{taskToBeEdited ? 'Modifier la tâche' : 'Nouvelle tâche'}</HeaderTitle>
                         </ModalIcon>
 
                         <ModalAction color={colors.primary} onPress={handleCloseModal}>

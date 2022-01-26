@@ -5,7 +5,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons'
 
 import { ListView, ListViewHidden, HiddenButton, SwipedTodoText, TodoText, TodoDate, colors } from '../styles/appStyles'
 
-const ListTasks = ({ tasks, setTasks }) => {
+const ListTasks = ({ tasks, setTasks, handleEditingTask }) => {
     //Styling task
     const [ swipedRow, setSwipedRow ] = useState()
 
@@ -30,7 +30,8 @@ const ListTasks = ({ tasks, setTasks }) => {
                     <Text style={{
                         fontSize: 16,
                         color: `${colors.tertiary}`,
-                        marginTop: 0
+                        marginTop: 0,
+                        marginBottom: 64
                     }}>
                         Vous n'avez pas de tâches aujourd'hui.
                     </Text>
@@ -42,7 +43,7 @@ const ListTasks = ({ tasks, setTasks }) => {
                         const RowText = data.item.key == swipedRow ? SwipedTodoText : TodoText;
 
                         return(
-                            <ListView underlayColor={colors.secondary} onPress={() => {}} >
+                            <ListView underlayColor={colors.secondary} onPress={() => {handleEditingTask(data.item)}} >
                                 <ScrollView>
                                     <RowText>{data.item.title}</RowText>
                                     <TodoDate>{data.item.date}</TodoDate>
