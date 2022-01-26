@@ -26,7 +26,7 @@ export const Container = styled.SafeAreaView`
 //Header Banner
 export const HeaderBanner = styled.Image`
   width: 100%;
-  height: 280px;
+  height: 300px;
 `
 
 export const HeaderTitle = styled.Text`
@@ -88,56 +88,54 @@ export const SwipedTodoText = styled(TodoText)`
 
 // Modal
 export const ModalButton = styled.TouchableOpacity`
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   background-color: ${colors.tertiary};
   border-radius: 50px;
   justify-content: center;
   align-items: center;
   align-self: center;
   position: absolute;
-  bottom: 15px;
+  bottom: 32px;
+  right: 32px
 `;
 
 export const ModalContainer = styled.View`
-  padding: 20px;
   justify-content: center;
   align-items: center;
   flex: 1;
-  background-color: ${colors.primary};
+  background-color: #0d1117a2
 `;
 
 export const ModalView = styled.View`
-  background-color: ${colors.secondary};
-  border-radius: 20px;
-  padding: 35px;
+  background-color: ${colors.primary};
+  padding: 16px;
+  width: 100%
 `;
 
 export const StyledInput = styled.TextInput`
-  width: 300px;
-  height: 50px;
-  background-color: ${colors.tertiary};
-  padding: 10px;
+  width: 100%;
+  height: 48px;
+  background-color: ${colors.primary};
+  border-bottom-width: 1px;
+  border-bottom-color: ${colors.tertiary};
+  padding: 12px;
   font-size: 16px;
-  border-radius: 10px;
-  color: ${colors.secondary};
-  letter-spacing: 1px;
+  margin-bottom: 8px;
+  color: ${colors.tertiary}
 `;
 
 export const ModalAction = styled.TouchableOpacity`
-  width: 60px;
-  height: 60px;
+  width: 24px;
+  height: 24px;
   background-color: ${(props) => props.color};
   border-radius: 50px;
   justify-content: center;
   align-items: center;
   align-self: center;
-`;
-
-export const ModalActionGroup = styled.View`
-  flex-direction: row;
-  justify-content: space-around;
-  margin-top: 30px;
+  position: absolute;
+  top: 26px;
+  right: 16px;
 `;
 
 export const ModalIcon = styled.View`

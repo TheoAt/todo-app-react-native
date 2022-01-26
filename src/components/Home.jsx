@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Header from './Header'
+import InputModal from './InputModal'
 import ListTasks from './ListTasks'
 
 const Home = () => {
@@ -24,10 +25,15 @@ const Home = () => {
         setTasks([])
     }
 
+    //MODAL & INPUT
+    const [ modalOn, setModalOn ] = useState(false)
+    const [ taskInputValue, setTaskInputValue ] = useState()
+
     return(
         <>
             <Header clearTasks={handleClearTasks} />
             <ListTasks tasks={tasks} setTasks={setTasks} />
+            <InputModal modalOn={modalOn} setModalOn={setModalOn} taskInputValue={taskInputValue} setTaskInputValue={setTaskInputValue} />
         </>
     )
 }
