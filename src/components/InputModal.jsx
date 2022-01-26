@@ -3,13 +3,19 @@ import { Modal } from 'react-native'
 import { ModalButton, ModalContainer, ModalView, StyledInput, ModalAction, ModalIcon, HeaderTitle, colors } from '../styles/appStyles'
 import { AntDesign } from '@expo/vector-icons'
 
-const InputModal = ({ modalOn, setModalOn, taskInputValue, setTaskInputValue }) => {
+const InputModal = ({ tasks, getDate, modalOn, setModalOn, taskInputValue, setTaskInputValue, handleAddTask }) => {
     const handleCloseModal = () => {
         setModalOn(false)
+        setTaskInputValue("")
     }
 
     const handleSubmit = () => {
-        alert('submit')
+        handleAddTask({
+            title: taskInputValue,
+            date: getDate(),
+            key: `${(tasks[tasks.length - 1] && parseInt(tasks[tasks.length - 1].key) + 1) || 1 }`
+        })
+        setTaskInputValue("")
     }
 
     return(
@@ -32,7 +38,7 @@ const InputModal = ({ modalOn, setModalOn, taskInputValue, setTaskInputValue }) 
                         </ModalIcon>
 
                         <ModalAction color={colors.primary} onPress={handleCloseModal}>
-                                <AntDesign name='close' size={20} color={colors.tertiary} />   
+                                <AntDesign name='close' size={16} color={colors.tertiary} />   
                         </ModalAction>
 
                         <StyledInput
