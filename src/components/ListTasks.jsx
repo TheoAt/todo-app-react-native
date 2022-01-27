@@ -3,6 +3,9 @@ import { ScrollView, View, Text } from 'react-native'
 import { SwipeListView } from 'react-native-swipe-list-view'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 
+//ASYNC STORAGE
+import AsyncStorage from '@react-native-async-storage/async-storage'
+
 import { ListView, ListViewHidden, HiddenButton, SwipedTodoText, TodoText, TodoDate, colors } from '../styles/appStyles'
 
 const ListTasks = ({ tasks, setTasks, handleEditingTask }) => {
@@ -10,7 +13,11 @@ const ListTasks = ({ tasks, setTasks, handleEditingTask }) => {
     const [ swipedRow, setSwipedRow ] = useState()
 
     const handleDeleteTask = (rowKey) => {
-        setTasks(tasks.filter(task => task.key !== rowKey))
+        const newTasks = tasks.filter(task => task.key !== rowKey)
+
+        AsyncStorage.setItem("storedTasks", JSON.stringify(newTasks)).then(() => {
+            setTasks(newTasks)
+        }).catch(error => console.log('error:', error))
     }
 
     return(
