@@ -1,5 +1,6 @@
 import React from 'react'
 import { View,  StyleSheet } from 'react-native'
+import * as Device from 'expo-device';
 
 //STYLES
 import { HeaderBanner, HeaderTitle, HeaderButton, colors } from '../styles/appStyles'
