@@ -1,15 +1,15 @@
 {
   "expo": {
-    "name": "ToDo App",
+    "name": "TouDou",
     "description": "Une application type ToDo liste développée en React Native.",
-    "slug": "todo-app-reat-native",
+    "slug": "todo-app-react-native",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/icon_toudou.png",
     "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "image": "./assets/splash_toudou.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#0d1117"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -22,8 +22,8 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "foregroundImage": "./assets/adaptative_icon_toudou.png",
+        "backgroundColor": "#0d1117"
       }
     },
     "web": {
